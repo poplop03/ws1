@@ -13,15 +13,15 @@ def cmdvel_callback(msg: Twist):
     setpoint2 = 0.0
     
     # Logic to determine setpoints based on linear velocities
-    if msg.linear.x == 0.5 and msg.linear.y == 0.0:
-        setpoint1 = 80
-        setpoint2 = 80
-    elif msg.linear.x == 0.5 and msg.linear.y == 0.5:
-        setpoint1 = 50
-        setpoint2 = 80
-    elif msg.linear.x == 0.5 and msg.linear.y == -0.5:
-        setpoint1 = 80
-        setpoint2 = 50
+    if msg.linear.x != 0 and msg.linear.y == 0:
+        setpoint1 = msg.linear.x*6
+        setpoint2 = msg.linear.x*8
+    if msg.linear.x != 0 and msg.linear.y > 0:
+        setpoint1 = msg.linear.x*6
+        setpoint2 = 0
+    if msg.linear.x != 0 and msg.linear.y < 0:
+        setpoint1 = 0
+        setpoint2 = msg.linear.x*8
     else:
         rospy.logwarn("Unknown /cmd_vel command. Defaulting setpoints to 0.")
     

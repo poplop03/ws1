@@ -1,0 +1,2 @@
+ws1botctrl
+-DCATKIN_DEVEL_PREFIX=/home/duc/ROS1/ws1/devel -DCMAKE_INSTALL_PREFIX=/home/duc/ROS1/ws1/install -G Unix Makefiles
