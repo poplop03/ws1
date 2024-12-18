@@ -1,8 +1,0 @@
-prefix=/home/duc/ROS1/ws1/devel
-
-Name: ws1botctrl
-Description: Description of ws1botctrl
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
